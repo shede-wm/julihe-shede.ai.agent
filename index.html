@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>聚利和集团 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .nav-inner::-webkit-scrollbar { display: none; }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            flex-shrink: 0;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national { background: linear-gradient(135deg, #e74c3c22, #e74c3c11); color: #c0392b; border: 1px solid #e74c3c44; }
+        .badge-province { background: linear-gradient(135deg, #3498db22, #3498db11); color: #2471a3; border: 1px solid #3498db44; }
+        .badge-city { background: linear-gradient(135deg, #27ae6022, #27ae6011); color: #1e8449; border: 1px solid #27ae6044; }
+        .badge-other { background: linear-gradient(135deg, #8e44ad22, #8e44ad11); color: #6c3483; border: 1px solid #8e44ad44; }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .biz-card .biz-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; margin-bottom: 14px;
+        }
+        .biz-card h4 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+        .biz-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+        /* ===== Desktop Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover { background: #f0f5ff; }
+        tbody tr:last-child td { border-bottom: none; }
+        .level-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 12px;
+            font-size: 12px; font-weight: 600; white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount { font-weight: 700; color: var(--accent); font-size: 15px; }
+        .category-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #f0f0f0; color: #555;
+        }
+
+        /* ===== V12: Honor Tag ===== */
+        .honor-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #f0e6ff, #e8daff);
+            color: #6c3483;
+            border: 1px solid #d4b8e8;
+            white-space: nowrap;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block; padding: 2px 7px; border-radius: 4px;
+            font-size: 11px; font-weight: 500; background: #e8f4fd; color: #2471a3;
+            margin: 1px 2px; white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Mobile Card View ===== */
+        .mobile-cards { display: none; }
+
+        .m-project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .m-project-card .m-card-header {
+            padding: 16px 18px 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .m-project-card .m-card-header .m-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            flex: 1;
+        }
+        .m-project-card .m-card-header .m-seq {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--accent);
+            color: white; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .m-project-card .m-card-body { padding: 4px 18px 16px; }
+        .m-field {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .m-field:last-child { border-bottom: none; }
+        .m-field .m-label {
+            min-width: 80px;
+            max-width: 80px;
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 600;
+            padding-top: 2px;
+            flex-shrink: 0;
+        }
+        .m-field .m-value {
+            flex: 1;
+            color: var(--text);
+            word-break: break-word;
+        }
+        .m-field .m-value.amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+            width: 3px; background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 24px; padding: 18px 24px;
+            background: var(--card-bg); border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -26px; top: 24px;
+            width: 14px; height: 14px; background: var(--accent);
+            border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .timeline-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 6px; }
+        .timeline-item p { font-size: 13px; color: var(--text-light); }
+        .status-done { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #27ae6022; color: #27ae60; font-weight: 600; }
+        .status-progress { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #f39c1222; color: #f39c12; font-weight: 600; }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info);
+            font-size: 13px; transition: all 0.2s; word-break: break-all;
+        }
+        .policy-ref a:hover { color: var(--primary); border-bottom-style: solid; }
+        .policy-card a {
+            color: var(--info); text-decoration: none; border-bottom: 1px dashed var(--info); transition: all 0.2s;
+        }
+        .policy-card a:hover { color: var(--primary); border-bottom-style: solid; }
+        .ext-icon { display: inline-block; font-size: 10px; margin-left: 2px; opacity: 0.6; }
+
+        /* ===== Roadmap ===== */
+        .roadmap { margin-top: 24px; }
+        .roadmap-quarter {
+            display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px; font-size: 14px; font-weight: 700; color: var(--primary);
+            padding-top: 6px; text-align: center; background: white; border-radius: 8px;
+            padding: 8px 4px; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items { flex: 1; display: flex; flex-wrap: wrap; gap: 8px; }
+        .roadmap-item {
+            padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+            border: 1px solid; line-height: 1.5; max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px; margin-top: 20px;
+        }
+        .unit-card {
+            background: white; border-radius: 10px; padding: 18px 20px;
+            border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .unit-card .unit-count {
+            font-size: 24px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .unit-card .unit-desc { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+        /* ===== Lifecycle Bar ===== */
+        .lifecycle-bar {
+            margin-top: 20px; padding: 20px 24px; background: #f8f9fc;
+            border-radius: 10px; border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 { font-size: 14px; color: var(--primary); margin-bottom: 16px; font-weight: 600; }
+        .lifecycle-steps { display: flex; gap: 0; position: relative; }
+        .lifecycle-step { flex: 1; text-align: center; position: relative; padding: 0 4px; }
+        .lifecycle-step .bar { height: 8px; border-radius: 4px; margin-bottom: 10px; }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .lifecycle-step .step-pct {
+            font-size: 18px; font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        /* ===== Contact Bar ===== */
+        .contact-bar {
+            margin-top: 20px; padding: 16px 28px; background: white;
+            border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border); display: flex;
+            align-items: center; gap: 28px; flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px; font-weight: 700; color: var(--primary);
+            white-space: nowrap; padding-right: 12px; border-right: 2px solid var(--border);
+        }
+        .contact-bar-name { font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: 1px; }
+        .contact-bar-info { font-size: 13px; color: var(--text); }
+        .contact-bar-info .cb-label { color: var(--text-light); margin-right: 4px; }
+        .contact-bar-info a { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 15px; }
+        .contact-bar-info a:hover { color: var(--accent); }
+        .contact-bar-sep { width: 1px; height: 28px; background: var(--border); }
+
+        /* ===== Collapse Sections ===== */
+        .collapse-group {
+            margin-top: 48px; padding-top: 32px; border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px; font-weight: 600; color: var(--text-light);
+            margin-bottom: 16px; text-align: center; letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px; border-radius: 12px; overflow: hidden;
+            background: var(--card-bg); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px; cursor: pointer; font-size: 16px; font-weight: 600;
+            color: var(--primary); display: flex; align-items: center; gap: 12px;
+            list-style: none; border-left: 4px solid var(--accent); transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6'; font-size: 12px; color: var(--accent);
+            transition: transform 0.3s; flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary { border-bottom: 1px solid var(--border); background: #f8f9fc; }
+        .collapse-section .collapse-body { padding: 24px 28px; animation: fadeSlideIn 0.3s ease; }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary); color: rgba(255,255,255,0.7);
+            text-align: center; padding: 24px; font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .mobile-cards { display: none !important; }
+        }
+
+        /* ================================================================
+           RESPONSIVE BREAKPOINTS
+           ================================================================ */
+
+        /* ===== Tablet & Small Desktop (≤1024px) ===== */
+        @media (max-width: 1024px) {
+            .container { padding: 20px 20px 48px; }
+            .header-inner { padding: 16px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+            .header h1 { font-size: 20px; }
+            .header h1 span { display: block; margin-left: 0; margin-top: 4px; font-size: 14px; }
+            .header-meta { font-size: 12px; }
+            .nav-inner { padding: 0 12px; }
+            .nav a { padding: 12px 16px; font-size: 13px; }
+            .table-wrapper { display: none; }
+            .mobile-cards { display: block; }
+            .section-title { font-size: 18px; }
+            .section-title .icon { width: 28px; height: 28px; font-size: 14px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .stat-card { padding: 18px; }
+            .stat-card .stat-num { font-size: 28px; }
+            .roadmap-quarter { flex-direction: column; gap: 8px; }
+            .roadmap-label { min-width: auto; text-align: left; padding: 8px 14px; display: flex; gap: 8px; align-items: center; }
+            .roadmap-item { max-width: 100%; }
+            .unit-summary { grid-template-columns: repeat(2, 1fr); }
+            .card { padding: 20px 22px; }
+            .collapse-section summary { padding: 16px 20px; font-size: 15px; }
+            .collapse-section .collapse-body { padding: 20px; }
+            .timeline { padding-left: 24px; }
+            .timeline-item { padding: 14px 18px; }
+        }
+
+        /* ===== Mobile (≤768px) ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px 12px 40px; }
+            .header-inner { padding: 14px 16px; }
+            .header h1 { font-size: 18px; }
+            .header h1 span { font-size: 13px; }
+            .nav-inner { padding: 0 8px; }
+            .nav a { padding: 10px 14px; font-size: 12px; }
+            .section { margin-bottom: 28px; }
+            .section-title { font-size: 17px; margin-bottom: 16px; padding-bottom: 10px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+            .stat-card { padding: 14px 10px; }
+            .stat-card .stat-num { font-size: 24px; }
+            .stat-card .stat-label { font-size: 11px; }
+            .filter-bar { gap: 6px; margin-bottom: 16px; }
+            .filter-btn { padding: 6px 14px; font-size: 12px; min-height: 40px; }
+            .m-project-card { margin-bottom: 14px; }
+            .m-project-card .m-card-header { padding: 14px 14px 10px; }
+            .m-project-card .m-card-header .m-title { font-size: 14px; }
+            .m-project-card .m-card-body { padding: 2px 14px 14px; }
+            .m-field { padding: 8px 0; font-size: 13px; }
+            .m-field .m-label { min-width: 70px; max-width: 70px; font-size: 11px; }
+            .roadmap-quarter { margin-bottom: 10px; }
+            .roadmap-items { gap: 6px; }
+            .roadmap-item { font-size: 11px; padding: 6px 10px; }
+            .unit-summary { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .unit-card { padding: 14px 16px; }
+            .unit-card .unit-count { font-size: 20px; }
+            .unit-card .unit-name { font-size: 12px; }
+            .unit-card .unit-desc { font-size: 11px; }
+            .card { padding: 18px 16px; border-radius: 10px; }
+            .card h3 { font-size: 15px; margin-bottom: 10px; }
+            .card p { font-size: 14px; line-height: 1.75; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 18px; }
+            .contact-bar-sep { display: none; }
+            .contact-bar-name { font-size: 16px; }
+            .lifecycle-bar { padding: 16px 14px; }
+            .lifecycle-step .step-label { font-size: 11px; }
+            .lifecycle-step .step-pct { font-size: 15px; }
+            .info-grid { grid-template-columns: 1fr; gap: 12px; }
+            .info-item { padding: 16px 18px; }
+            .info-item .value { font-size: 14px; }
+            .biz-grid { grid-template-columns: 1fr; gap: 12px; }
+            .badge-group { gap: 6px; }
+            .badge { padding: 6px 12px; font-size: 12px; }
+            .collapse-section summary { padding: 14px 16px; font-size: 14px; }
+            .collapse-section .collapse-body { padding: 16px; }
+            .timeline { padding-left: 20px; }
+            .timeline::before { left: 6px; }
+            .timeline-item { padding: 12px 16px; margin-bottom: 16px; }
+            .timeline-item::before { left: -20px; width: 12px; height: 12px; top: 20px; }
+            .footer { padding: 18px 12px; font-size: 12px; }
+        }
+
+        /* ===== Small Mobile (≤480px) ===== */
+        @media (max-width: 480px) {
+            .container { padding: 12px 8px 32px; }
+            .header-inner { padding: 12px 12px; }
+            .header h1 { font-size: 16px; }
+            .header h1 span { font-size: 12px; }
+            .header-meta { font-size: 11px; }
+            .nav a { padding: 10px 12px; font-size: 11px; }
+            .section-title { font-size: 15px; gap: 8px; }
+            .section-title .icon { width: 24px; height: 24px; font-size: 12px; border-radius: 6px; }
+            .stats-bar { gap: 8px; margin-bottom: 16px; }
+            .stat-card { padding: 12px 8px; }
+            .stat-card .stat-num { font-size: 20px; }
+            .stat-card .stat-label { font-size: 10px; }
+            .filter-btn { padding: 5px 10px; font-size: 11px; min-height: 36px; }
+            .m-project-card .m-card-header { padding: 12px 12px 8px; }
+            .m-project-card .m-card-header .m-title { font-size: 13px; }
+            .m-project-card .m-card-body { padding: 0 12px 12px; }
+            .m-field { padding: 7px 0; font-size: 12px; }
+            .m-field .m-label { min-width: 62px; max-width: 62px; font-size: 10px; }
+            .m-field .m-value.amount { font-size: 14px; }
+            .roadmap-label { padding: 6px 10px; font-size: 12px; }
+            .roadmap-item { font-size: 10px; padding: 5px 8px; }
+            .unit-summary { grid-template-columns: 1fr; }
+            .card { padding: 14px 12px; }
+            .card h3 { font-size: 14px; }
+            .card p { font-size: 13px; }
+            .lifecycle-step .step-label { font-size: 10px; }
+            .lifecycle-step .step-pct { font-size: 14px; }
+            .contact-bar { padding: 12px 14px; }
+            .contact-bar-title { font-size: 13px; }
+            .contact-bar-name { font-size: 15px; }
+            .contact-bar-info { font-size: 12px; }
+            .info-item { padding: 14px 14px; }
+            .info-item .label { font-size: 10px; }
+            .info-item .value { font-size: 13px; }
+            .badge { padding: 5px 10px; font-size: 11px; }
+            .badge-group { gap: 5px; }
+            .collapse-section summary { padding: 12px 14px; font-size: 13px; gap: 8px; }
+            .collapse-section .collapse-body { padding: 14px 12px; }
+            .timeline { padding-left: 16px; }
+            .timeline-item { padding: 10px 12px; }
+            .timeline-item .year { font-size: 12px; }
+            .timeline-item h4 { font-size: 13px; }
+            .timeline-item p { font-size: 12px; }
+            .footer { font-size: 11px; padding: 16px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>聚利和集团 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年7月29日 &nbsp;|&nbsp; 基于公开政策及企业实际投资规模估算</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据汇总</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ═══ 首屏核心板块 ═══ -->
+
+    <!-- ===== 1. 可申报项目清单 ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">10</div>
+                <div class="stat-label">可申报项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~3400</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">3</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">7</div>
+                <div class="stat-label">省/市/区级项目（含1个荣誉类）</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+            <button class="filter-btn" onclick="filterTable('district')">区级</button>
+        </div>
+
+        <!-- 桌面端：数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ===== 国家级项目（3个） ===== -->
+                    <tr data-level="national">
+                        <td data-label="序号">1</td>
+                        <td data-label="项目名称"><strong>超长期特别国债工业设备更新改造专项</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">技术改造</span></td>
+                        <td data-label="归口部门">国家发改委/财政部</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">6-7月</td>
+                        <td data-label="预计奖补" class="amount">500-800</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">智能烹饪设备</span>
+                            <span class="tech-tag hw">自动化产线</span>
+                            <span class="tech-tag sw">中央厨房系统</span>
+                        </td>
+                        <td data-label="核心条件">1.覆盖轻工（食品）行业；2.固定资产投资≥200万元（不含土地、厂房）；3.淘汰落后设备，替换智能高效新设备；4.项目投资完成率≤80%；5.无失信记录</td>
+                        <td data-label="所需材料">项目备案文件；设备购置合同及发票；淘汰落后设备清单；项目投资进度证明；企业信用报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941843.html" target="_blank" rel="noopener">推动大规模设备更新和消费品以旧换新行动方案（国发〔2024〕7号）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td data-label="序号">2</td>
+                        <td data-label="项目名称"><strong>中小企业数字化转型试点示范项目</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">企业培育</span></td>
+                        <td data-label="归口部门">工信部/财政部</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">5-6月</td>
+                        <td data-label="预计奖补" class="amount">600</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">ERP/MES</span>
+                            <span class="tech-tag sw">供应链管理</span>
+                            <span class="tech-tag ai">智能排产</span>
+                        </td>
+                        <td data-label="核心条件">1.专精特新或规上中小工业企业；2.轻量化智能改造，总投资≤1000万元；3.设备投资占比≥50%；4.北京市为试点城市，企业通过市级经信部门申报</td>
+                        <td data-label="所需材料">企业营业执照；专精特新认定证明；数字化转型方案；投资计划书；设备投资明细</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.gov.cn/govweb/zhengce/zhengceku/202405/content_6948798.htm" target="_blank" rel="noopener">关于做好2024年中小企业数字化转型城市试点工作的通知（财建〔2023〕117号）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td data-label="序号">3</td>
+                        <td data-label="项目名称"><strong>绿色制造与智能制造融合项目</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">绿色制造</span></td>
+                        <td data-label="归口部门">国家发改委/工信部</td>
+                        <td data-label="申报层级"><span class="level-tag level-national">国家级</span></td>
+                        <td data-label="申报周期">5-6月</td>
+                        <td data-label="预计奖补" class="amount">150-300</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">节能设备</span>
+                            <span class="tech-tag sw">EMS能源管理</span>
+                            <span class="tech-tag ai">能耗优化</span>
+                        </td>
+                        <td data-label="核心条件">1.已获评或拟申报绿色工厂；2.单位产品能耗降低≥20%；3.建成EMS能源管理系统；4.无环保处罚记录</td>
+                        <td data-label="所需材料">绿色工厂自评价报告；能源审计报告；EMS系统建设方案；节能设备投资清单；环评合规证明</td>
+                        <td data-label="政策依据" class="policy-ref">绿色制造工程实施指南（工信部联节〔2016〕225号）</td>
+                    </tr>
+
+
+                    <!-- ===== 省级项目（4个） ===== -->
+                    <tr data-level="province">
+                        <td data-label="序号">4</td>
+                        <td data-label="项目名称"><strong>河北省工业项目竣工达产激励</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">新建厂房</span></td>
+                        <td data-label="归口部门">河北省工信厅</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">全年</td>
+                        <td data-label="预计奖补" class="amount">400-600</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">中央厨房产线</span>
+                            <span class="tech-tag sw">生产管理软件</span>
+                            <span class="tech-tag hw">检测设备</span>
+                        </td>
+                        <td data-label="核心条件">1.企业在冀注册，独立法人，项目在省内实施；2.政策周期内竣工投产；3.新增生产规模≥2000万元；4.纳入固定资产投资统计；5.未重复享受省级同类资金</td>
+                        <td data-label="所需材料">项目竣工验收报告；投产证明；新增产值证明；设备（含软件）投资明细；固定资产投资统计入库证明</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://m.sohu.com/a/972753904_121123526/" target="_blank" rel="noopener">河北省工业项目竣工达产激励工作通知<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td data-label="序号">5</td>
+                        <td data-label="项目名称"><strong>北京市中小企业数字化转型专项</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">技术改造</span></td>
+                        <td data-label="归口部门">北京市经信局</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">5-6月</td>
+                        <td data-label="预计奖补" class="amount">150-250</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag sw">SaaS应用</span>
+                            <span class="tech-tag sw">智慧团餐系统</span>
+                            <span class="tech-tag ai">数据分析</span>
+                        </td>
+                        <td data-label="核心条件">1.北京市注册中小企业；2.数字化转型项目总投资≥200万元；3.采用云平台、SaaS等轻量化方案；4.数字化投入占比不低于一定比例</td>
+                        <td data-label="所需材料">企业营业执照；数字化转型方案书；软件/云服务采购合同；投资明细及发票</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://jxj.beijing.gov.cn/" target="_blank" rel="noopener">北京市经济和信息化局中小企业数字化转型扶持政策<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td data-label="序号">6</td>
+                        <td data-label="项目名称"><strong>河北省智改数转技术改造项目</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">智能制造</span></td>
+                        <td data-label="归口部门">河北省工信厅</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">3-5月</td>
+                        <td data-label="预计奖补" class="amount">200-350</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">智能产线</span>
+                            <span class="tech-tag sw">MES/ERP</span>
+                            <span class="tech-tag ai">智能质检</span>
+                        </td>
+                        <td data-label="核心条件">1.河北省独立法人工业企业；2.近3年无重大安全/环保/质量事故；3.设备投资≥800万元（切块项目）；4.智能制造能力成熟度≥二级；5.项目年内基本竣工</td>
+                        <td data-label="所需材料">项目备案文件；设备购置合同及发票；智能制造能力成熟度自评报告；项目竣工证明</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://gxt.hebei.gov.cn/" target="_blank" rel="noopener">河北省加快制造业智能化改造数字化转型行动计划<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td data-label="序号">7</td>
+                        <td data-label="项目名称"><strong>工业互联网标杆工厂及平台应用项目</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">智能制造</span></td>
+                        <td data-label="归口部门">工信部/北京市经信局</td>
+                        <td data-label="申报层级"><span class="level-tag level-province">省级</span></td>
+                        <td data-label="申报周期">2-4月</td>
+                        <td data-label="预计奖补" class="amount">100-200</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">IoT网关</span>
+                            <span class="tech-tag sw">工业APP</span>
+                            <span class="tech-tag sw">设备管理平台</span>
+                        </td>
+                        <td data-label="核心条件">1.完成设备联网与数据采集上云；2.工业APP≥5个，覆盖50%以上生产环节；3.通过三级等保；4.生产效率提升≥15%</td>
+                        <td data-label="所需材料">设备联网证明；工业APP清单及功能说明；三级等保证明；生产效率提升报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">工业互联网创新发展行动计划（2024-2026年）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+
+                    <!-- ===== 市级项目（2个） ===== -->
+                    <tr data-level="city">
+                        <td data-label="序号">8</td>
+                        <td data-label="项目名称"><strong>北京市智能工厂梯度培育项目（基础级）</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">智能制造</span></td>
+                        <td data-label="归口部门">北京市经信局</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">1-3月</td>
+                        <td data-label="预计奖补" class="amount"><span class="honor-tag">荣誉类项目</span></td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">传感器/PLC</span>
+                            <span class="tech-tag sw">SCADA/MES</span>
+                            <span class="tech-tag ai">视觉质检</span>
+                        </td>
+                        <td data-label="核心条件">1.规上工业企业，独立法人资格；2.基础级：设备联网率≥50%，自评测≥60分；3.V13层级去重：企业从未申报智能工厂，从市级基础级起步</td>
+                        <td data-label="所需材料">智能工厂自评价报告；设备联网率证明；智能制造能力成熟度自评报告</td>
+                        <td data-label="政策依据" class="policy-ref"><a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">智能工厂梯度培育管理办法（暂行）（工信部联规〔2024〕200号）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="city">
+                        <td data-label="序号">9</td>
+                        <td data-label="项目名称"><strong>大兴区餐饮食品设备更新专项</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">技术改造</span></td>
+                        <td data-label="归口部门">大兴区经信局/商务局</td>
+                        <td data-label="申报层级"><span class="level-tag level-city">市级</span></td>
+                        <td data-label="申报周期">6-7月</td>
+                        <td data-label="预计奖补" class="amount">100-200</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">智能烹饪设备</span>
+                            <span class="tech-tag hw">冷链物流设备</span>
+                            <span class="tech-tag sw">食品安全溯源</span>
+                        </td>
+                        <td data-label="核心条件">1.大兴区注册企业；2.餐饮食品行业设备更新改造；3.设备投资≥200万元；4.符合食品安全及环保标准</td>
+                        <td data-label="所需材料">企业营业执照；设备更新方案；设备采购合同及发票；食品安全合规证明</td>
+                        <td data-label="政策依据" class="policy-ref">大兴区促进餐饮及食品产业高质量发展扶持措施</td>
+                    </tr>
+
+                    <!-- ===== 区级项目（1个） ===== -->
+                    <tr data-level="district">
+                        <td data-label="序号">10</td>
+                        <td data-label="项目名称"><strong>高阳县循环经济新建产业化项目</strong></td>
+                        <td data-label="项目类别"><span class="category-tag">新建厂房</span></td>
+                        <td data-label="归口部门">高阳县发改局/工信局</td>
+                        <td data-label="申报层级"><span class="level-tag level-district">区级</span></td>
+                        <td data-label="申报周期">按批次通知</td>
+                        <td data-label="预计奖补" class="amount">500-800</td>
+                        <td data-label="技术方向">
+                            <span class="tech-tag hw">中央厨房产线</span>
+                            <span class="tech-tag sw">数字农业平台</span>
+                            <span class="tech-tag hw">废弃物处理设备</span>
+                        </td>
+                        <td data-label="核心条件">1.项目符合循环经济发展规划；2.固定资产投资≥2000万元；3.环保手续齐全，污染物排放达标；4.具备稳定的原料来源和产品消纳渠道</td>
+                        <td data-label="所需材料">项目备案文件；四证四评手续；投资进度证明；循环经济方案；环评批复</td>
+                        <td data-label="政策依据" class="policy-ref">高阳县循环经济+数字农业产业基地投资合作协议</td>
+                    </tr>
+
+                    <!-- ===== 国家级项目 - 补充（工业互联网，排在国家级区域最后） ===== -->
+                    <!-- 注：项目8工业互联网为省级，已在上方排好 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 移动端：卡片视图 -->
+        <div class="mobile-cards" id="mobileCards">
+            <!-- 项目1 -->
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">1</div>
+                    <div class="m-title">超长期特别国债工业设备更新改造专项</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">技术改造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">国家发改委/财政部</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">6-7月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">500-800万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">智能烹饪设备</span>
+                        <span class="tech-tag hw">自动化产线</span>
+                        <span class="tech-tag sw">中央厨房系统</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.覆盖轻工（食品）行业；2.固定资产投资≥200万元；3.淘汰落后设备，替换智能高效新设备；4.投资完成率≤80%</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目备案文件；设备购置合同及发票；淘汰落后设备清单；投资进度证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941843.html" target="_blank" rel="noopener">推动大规模设备更新和消费品以旧换新行动方案<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目2 -->
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">2</div>
+                    <div class="m-title">中小企业数字化转型试点示范项目</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">企业培育</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">工信部/财政部</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">5-6月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">600万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">ERP/MES</span>
+                        <span class="tech-tag sw">供应链管理</span>
+                        <span class="tech-tag ai">智能排产</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.专精特新或规上中小工业企业；2.总投资≤1000万元；3.设备投资占比≥50%</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">营业执照；专精特新认定证明；数字化转型方案；投资计划书</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.gov.cn/govweb/zhengce/zhengceku/202405/content_6948798.htm" target="_blank" rel="noopener">中小企业数字化转型城市试点通知<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目3 -->
+            <div class="m-project-card" data-level="national">
+                <div class="m-card-header">
+                    <div class="m-seq">3</div>
+                    <div class="m-title">绿色制造与智能制造融合项目</div>
+                    <span class="level-tag level-national">国家级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">绿色制造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">国家发改委/工信部</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">5-6月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">150-300万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">节能设备</span>
+                        <span class="tech-tag sw">EMS能源管理</span>
+                        <span class="tech-tag ai">能耗优化</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.已获评或拟申报绿色工厂；2.单位产品能耗降低≥20%；3.建成EMS能源管理系统</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">绿色工厂自评价报告；能源审计报告；EMS建设方案；节能设备投资清单</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value">绿色制造工程实施指南（工信部联节〔2016〕225号）</div></div>
+                </div>
+            </div>
+            <!-- 项目4 -->
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">4</div>
+                    <div class="m-title">河北省工业项目竣工达产激励</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">新建厂房</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">河北省工信厅</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">全年</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">400-600万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">中央厨房产线</span>
+                        <span class="tech-tag sw">生产管理软件</span>
+                        <span class="tech-tag hw">检测设备</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.在冀注册独立法人；2.竣工投产；3.新增生产规模≥2000万元；4.纳入固投统计</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">竣工验收报告；投产证明；新增产值证明；设备投资明细</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://m.sohu.com/a/972753904_121123526/" target="_blank" rel="noopener">河北省工业项目竣工达产激励通知<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目5 -->
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">5</div>
+                    <div class="m-title">北京市中小企业数字化转型专项</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">技术改造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">北京市经信局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">5-6月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">150-250万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag sw">SaaS应用</span>
+                        <span class="tech-tag sw">智慧团餐系统</span>
+                        <span class="tech-tag ai">数据分析</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.北京市注册中小企业；2.数字化转型投资≥200万元；3.采用云平台/SaaS方案</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">营业执照；数字化转型方案；软件/云服务采购合同；投资明细</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://jxj.beijing.gov.cn/" target="_blank" rel="noopener">北京市经信局中小企业数字化转型政策<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目6 -->
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">6</div>
+                    <div class="m-title">河北省智改数转技术改造项目</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">智能制造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">河北省工信厅</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">3-5月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">200-350万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">智能产线</span>
+                        <span class="tech-tag sw">MES/ERP</span>
+                        <span class="tech-tag ai">智能质检</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.河北省独立法人工业企业；2.设备投资≥800万元；3.成熟度≥二级；4.项目年内竣工</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目备案文件；设备购置合同及发票；成熟度自评报告；竣工证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://gxt.hebei.gov.cn/" target="_blank" rel="noopener">河北省制造业智改数转行动计划<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目7 -->
+            <div class="m-project-card" data-level="province">
+                <div class="m-card-header">
+                    <div class="m-seq">7</div>
+                    <div class="m-title">工业互联网标杆工厂及平台应用项目</div>
+                    <span class="level-tag level-province">省级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">智能制造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">工信部/北京市经信局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">2-4月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">100-200万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">IoT网关</span>
+                        <span class="tech-tag sw">工业APP</span>
+                        <span class="tech-tag sw">设备管理平台</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.完成设备联网上云；2.工业APP≥5个；3.通过三级等保；4.生产效率提升≥15%</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">设备联网证明；工业APP清单；三级等保证明；效率提升报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">工业互联网创新发展行动计划（2024-2026年）<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目8 - 市级智能工厂（荣誉类，V13层级去重） -->
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">8</div>
+                    <div class="m-title">北京市智能工厂梯度培育项目（基础级）</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">智能制造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">北京市经信局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">1-3月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value"><span class="honor-tag">荣誉类项目</span></div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">传感器/PLC</span>
+                        <span class="tech-tag sw">SCADA/MES</span>
+                        <span class="tech-tag ai">视觉质检</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.规上工业企业；2.设备联网率≥50%，自评测≥60分；3.V13层级去重：从市级基础级起步</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">智能工厂自评价报告；设备联网率证明；成熟度自评报告</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value policy-ref"><a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">智能工厂梯度培育管理办法（暂行）<span class="ext-icon">&#8599;</span></a></div></div>
+                </div>
+            </div>
+            <!-- 项目9 -->
+            <div class="m-project-card" data-level="city">
+                <div class="m-card-header">
+                    <div class="m-seq">9</div>
+                    <div class="m-title">大兴区餐饮食品设备更新专项</div>
+                    <span class="level-tag level-city">市级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">技术改造</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">大兴区经信局/商务局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">6-7月</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">100-200万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">智能烹饪设备</span>
+                        <span class="tech-tag hw">冷链物流设备</span>
+                        <span class="tech-tag sw">食品安全溯源</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.大兴区注册企业；2.餐饮食品行业设备更新；3.设备投资≥200万元</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">营业执照；设备更新方案；采购合同及发票；食品安全合规证明</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value">大兴区促进餐饮及食品产业高质量发展扶持措施</div></div>
+                </div>
+            </div>
+            <!-- 项目10 -->
+            <div class="m-project-card" data-level="district">
+                <div class="m-card-header">
+                    <div class="m-seq">10</div>
+                    <div class="m-title">高阳县循环经济新建产业化项目</div>
+                    <span class="level-tag level-district">区级</span>
+                </div>
+                <div class="m-card-body">
+                    <div class="m-field"><div class="m-label">项目类别</div><div class="m-value"><span class="category-tag">新建厂房</span></div></div>
+                    <div class="m-field"><div class="m-label">归口部门</div><div class="m-value">高阳县发改局/工信局</div></div>
+                    <div class="m-field"><div class="m-label">申报周期</div><div class="m-value">按批次通知</div></div>
+                    <div class="m-field"><div class="m-label">预计奖补</div><div class="m-value amount">500-800万元</div></div>
+                    <div class="m-field"><div class="m-label">技术方向</div><div class="m-value">
+                        <span class="tech-tag hw">中央厨房产线</span>
+                        <span class="tech-tag sw">数字农业平台</span>
+                        <span class="tech-tag hw">废弃物处理设备</span>
+                    </div></div>
+                    <div class="m-field"><div class="m-label">核心条件</div><div class="m-value">1.符合循环经济规划；2.固投≥2000万元；3.环保手续齐全；4.稳定原料来源和产品渠道</div></div>
+                    <div class="m-field"><div class="m-label">所需材料</div><div class="m-value">项目备案文件；四证四评手续；投资进度证明；循环经济方案；环评批复</div></div>
+                    <div class="m-field"><div class="m-label">政策依据</div><div class="m-value">高阳县循环经济+数字农业产业基地投资合作协议</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q1<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">1-3月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item city"><strong>&#9312;</strong> 北京市智能工厂梯度培育（基础级）<br><span style="opacity:0.7">1-3月 | 北京市经信局</span></div>
+                        <div class="roadmap-item province"><strong>&#9313;</strong> 河北省智改数转技改<br><span style="opacity:0.7">3-5月 | 河北省工信厅</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">4-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 中小企业数字化转型试点<br><span style="opacity:0.7">5-6月 | 工信部/财政部</span></div>
+                        <div class="roadmap-item national"><strong>&#9313;</strong> 绿色制造融合项目<br><span style="opacity:0.7">5-6月 | 发改委/工信部</span></div>
+                        <div class="roadmap-item province"><strong>&#9314;</strong> 北京市数字化转型专项<br><span style="opacity:0.7">5-6月 | 北京市经信局</span></div>
+                        <div class="roadmap-item province"><strong>&#9315;</strong> 工业互联网标杆工厂<br><span style="opacity:0.7">2-4月 | 工信部/北京市经信局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">7-9月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 超长期国债设备更新（第三批）<br><span style="opacity:0.7">6-7月 | 国家发改委/财政部</span></div>
+                        <div class="roadmap-item city"><strong>&#9313;</strong> 大兴区设备更新专项<br><span style="opacity:0.7">6-7月 | 大兴区经信局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9312;</strong> 河北省竣工达产激励<br><span style="opacity:0.7">全年 | 河北省工信厅</span></div>
+                        <div class="roadmap-item district"><strong>&#9313;</strong> 高阳县循环经济项目<br><span style="opacity:0.7">按批次 | 高阳县政府</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">国家发改委/财政部</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">超长期国债设备更新 / 绿色制造融合</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">工信部</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">数字化转型试点 / 智能工厂培育 / 工业互联网</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">北京市经信局</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">中小企业数字化转型专项</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">河北省工信厅</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">竣工达产激励 / 智改数转技改</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">大兴区经信局</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">餐饮食品设备更新专项</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">高阳县政府</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">循环经济新建产业化项目</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941843.html" target="_blank" rel="noopener">推动大规模设备更新和消费品以旧换新行动方案（国发〔2024〕7号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.gov.cn/govweb/zhengce/zhengceku/202405/content_6948798.htm" target="_blank" rel="noopener">关于做好中小企业数字化转型城市试点工作的通知（财建〔2023〕117号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> 绿色制造工程实施指南（工信部联节〔2016〕225号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> <a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">智能工厂梯度培育管理办法（暂行）（工信部联规〔2024〕200号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> <a href="https://www.miit.gov.cn/" target="_blank" rel="noopener">工业互联网创新发展行动计划（2024-2026年）<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>北京市/河北省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://jxj.beijing.gov.cn/" target="_blank" rel="noopener">北京市经济和信息化局中小企业数字化转型扶持政策<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://m.sohu.com/a/972753904_121123526/" target="_blank" rel="noopener">河北省工业项目竣工达产激励工作通知<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://gxt.hebei.gov.cn/" target="_blank" rel="noopener">河北省加快制造业智能化改造数字化转型行动计划<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 市/区级 -->
+        <div class="card policy-card">
+            <h3>市/区级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 大兴区促进餐饮及食品产业高质量发展扶持措施
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 高阳县循环经济+数字农业产业基地投资合作协议
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 固定板块 ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注国家发改委、工信部、北京市经信局、河北省工信厅、大兴区经信局及高阳县政府的年度申报通知，提前做好材料准备。预计奖补金额为基于公开政策及企业实际投资规模的保守预估值，可能因政策调整而变化。标注为"荣誉类项目"的条目以获得资质认定为主要价值，直接资金奖励较少。
+            </p>
+            <!-- ▼▼▼ ⚠️ 固定板块：项目申报全生命周期 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ ⚠️ 固定板块：项目咨询联系人 —— 所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ═══ 折叠面板区域 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述 -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>聚利和集团股份有限公司（曾用名：北京聚利和集团股份有限公司）成立于2009年6月，注册地位于北京市大兴区鼎业路7号院，注册资本1亿元人民币，法定代表人段月芹。集团是一家汇集智慧团膳连锁产业、智能中央厨房产业、食品供应链产业、现代农业产业、休闲康养产业的多元化企业集团，业务辐射京津冀、湖北、内蒙古等地区。集团拥有员工1000-5000人，获评专精特新中小企业、A级纳税人（2024年）等荣誉，在团餐及中央厨房领域具有较强的行业影响力。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">聚利和集团股份有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">成立年份</div>
+                        <div class="value">2009年6月</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册资本</div>
+                        <div class="value">10,000万元（1亿元）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">段月芹</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地</div>
+                        <div class="value">北京市大兴区鼎业路7号院</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">员工规模</div>
+                        <div class="value">1000-5000人</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">企业性质</div>
+                        <div class="value">民营企业</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">行业定位</div>
+                        <div class="value">餐饮/食品加工/团膳服务</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务 -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>聚利和集团以餐饮服务业为核心，形成了覆盖团膳连锁、中央厨房、食品供应链、现代农业、循环经济的多元化产业布局。集团通过智慧团膳连锁模式为企事业单位、学校、医院等提供规模化配餐服务；通过智能中央厨房实现农产品深加工、净菜加工、预制菜生产等功能；通过食品供应链产业打通上下游采购、仓储、物流环节；同时布局现代农业和循环经济，推动乡村振兴和可持续发展。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#127858;</div>
+                        <h4>智慧团膳连锁</h4>
+                        <p>为企事业单位、学校、医院等提供规模化、标准化团膳配餐服务，覆盖京津冀等地区</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fef3e2;">&#127859;</div>
+                        <h4>智能中央厨房</h4>
+                        <p>集农产品深加工、净菜加工、预制菜生产于一体的智能化中央厨房产业基地</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#128230;</div>
+                        <h4>食品供应链</h4>
+                        <p>打通食材采购、仓储管理、冷链物流全链条，构建B2B企业采购商务平台</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#127806;</div>
+                        <h4>现代农业/循环经济</h4>
+                        <p>布局数字农业、循环经济产业基地，推动乡村振兴与可持续发展</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉 -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 专精特新中小企业</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; A级纳税人（2024年）</span>
+                        <span class="badge badge-province">&#127941; 北京市大兴区重点餐饮企业</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请 -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目投资情况（2024-2026）</summary>
+            <div class="collapse-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2021-2022年</div>
+                        <h4>高阳县循环经济+数字农业产业基地暨中央厨房投资项目</h4>
+                        <p>与河北省高阳县签署投资合作协议，计划总投资超1.3亿元，建设中央厨房配餐及净菜加工板块 <span class="status-progress">在建</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2022年</div>
+                        <h4>高碑店中央厨房项目</h4>
+                        <p>与河北省高碑店市签约，计划总投资1.3亿元，建设中央厨房配餐功能板块及净菜加工板块 <span class="status-progress">在建</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2019年</div>
+                        <h4>河北雄安聚利和食品科技有限公司</h4>
+                        <p>设立子公司，注册资本510.5万元，聚焦食品科技领域 <span class="status-done">已运营</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    聚利和集团 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年7月29日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格 + 卡片 层级筛选
+    function filterTable(level) {
+        const tableRows = document.querySelectorAll('#projectTable tbody tr');
+        tableRows.forEach(row => {
+            row.style.display = (level === 'all' || row.dataset.level === level) ? '' : 'none';
+        });
+        const mobileCards = document.querySelectorAll('#mobileCards .m-project-card');
+        mobileCards.forEach(card => {
+            card.style.display = (level === 'all' || card.dataset.level === level) ? '' : 'none';
+        });
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // 3. 滚动监听
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
